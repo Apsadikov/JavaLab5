@@ -1,0 +1,72 @@
+use "project";
+
+db.createCollection("shop");
+
+db.shop.insert([
+    {
+        name: "Shop 1",
+        logo: "http://logo_shop_1.png"
+    },
+    {
+        name: "Shop 2",
+        logo: "http://logo_shop_2.png"
+    },
+]);
+
+db.shop.find();
+
+db.createCollection("products");
+
+db.products.insert([
+    {
+         name: "product 1",
+         shop: ObjectId("5fb004b8a3b88f12c45dd624"),
+         category: "Food",
+         description: "Milk",
+         price: "140",
+         comments: [
+            {
+                text: "comment 1"
+            },
+            {
+                text: "comment 2"
+            }
+         ]
+    },
+    {
+        text: "product 2",
+        category: "Toys",
+        price: "200",
+        user: ObjectId("5fb004b8a3b88f12c45dd624")
+    },
+    {
+        text: "product 3",
+        category: "Toys",
+        price: "100",
+        user: ObjectId("5fb004b8a3b88f12c45dd624"),
+        comment: [
+            {
+                text: "comment 3"
+            }
+        ]
+    },
+    {
+         text: "product 4",
+         price: "400",
+         user: ObjectId("5fb004b8a3b88f12c45dd625")
+    },
+    {
+        text: "product 5",
+        price: "500",
+        user: ObjectId("5fb004b8a3b88f12c45dd625")
+    },
+    {
+        text: "product 6",
+        price: "1000",
+        category: "Computer components",
+        description: "Motherboard",
+        user: ObjectId("5fb004b8a3b88f12c45dd625")
+    },
+]);
+
+db.products.find();
