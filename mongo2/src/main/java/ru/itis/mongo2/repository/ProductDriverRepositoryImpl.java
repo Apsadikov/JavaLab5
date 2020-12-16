@@ -16,9 +16,6 @@ import java.util.Optional;
 public class ProductDriverRepositoryImpl implements CrudRepository<Product, String> {
     private MongoDatabase mongoDatabase;
 
-    //Поиск
-    //Обновление
-
     @Autowired
     public ProductDriverRepositoryImpl(MongoDatabase mongoDatabase) {
         this.mongoDatabase = mongoDatabase;
